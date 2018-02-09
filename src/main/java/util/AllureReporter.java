@@ -6,7 +6,7 @@ import org.openqa.selenium.TakesScreenshot;
 import ru.yandex.qatools.allure.Allure;
 import ru.yandex.qatools.allure.events.MakeAttachmentEvent;
 
-import static steps.BaseStep.getDriver;
+import static steps.BaseSteps.getDriver;
 
 
 public class AllureReporter extends ru.yandex.qatools.allure.cucumberjvm.AllureReporter {
