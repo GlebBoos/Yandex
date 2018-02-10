@@ -7,16 +7,13 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import pages.YandexMainPage;
 import ru.yandex.qatools.allure.annotations.Attachment;
 import util.TestProperties;
 
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-/**
- * Created by K_PC-S on 29.01.2018.
- */
+
 public class BaseSteps {
     private static WebDriver driver;
     private static String baseUrl;

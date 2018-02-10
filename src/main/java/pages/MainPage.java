@@ -6,15 +6,13 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import steps.BaseSteps;
 
-/**
- * Created by K_PC-S on 29.01.2018.
- */
-public class YandexMainPage {
+
+public class MainPage {
 
     @FindBy(xpath = "//div[contains(@class,\"home-tabs stream-control\")]")
     WebElement yandexMarketHref;
 
-    public YandexMainPage() {
+    public MainPage() {
         PageFactory.initElements(BaseSteps.getDriver(), this);
     }
 

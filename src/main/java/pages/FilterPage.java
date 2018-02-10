@@ -6,10 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import steps.BaseSteps;
 
-/**
- * Created by K_PC-S on 29.01.2018.
- */
-public class AdvancedFilterPage {
+
+public class FilterPage {
 
     @FindBy (xpath = "//div[contains(@class,'n-filter-block__item')]")
     WebElement title;
@@ -20,7 +18,7 @@ public class AdvancedFilterPage {
     @FindBy(xpath = "//div[contains(@class,'n-filter-panel-extend')]")
     WebElement buttonText;
 
-    public AdvancedFilterPage(){
+    public FilterPage(){
         PageFactory.initElements(BaseSteps.getDriver(),this);
     }
 

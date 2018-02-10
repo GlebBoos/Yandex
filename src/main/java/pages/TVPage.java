@@ -9,9 +9,7 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-/**
- * Created by K_PC-S on 29.01.2018.
- */
+
 public class TVPage {
 
     @FindBy(xpath = "//div[@class='n-filter-panel-aside__show-more']")

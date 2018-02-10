@@ -10,10 +10,8 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-/**
- * Created by K_PC-S on 01.02.2018.
- */
-public class EarPhonePage {
+
+public class EarmuffPage {
 
     @FindBy(xpath = "(//div[contains(@class,'n-snippet-cell2__title')]/a)")
     List<WebElement> countOnPage;
@@ -30,7 +28,7 @@ public class EarPhonePage {
     @FindBy(xpath = "(//a/strong[contains(text(),'Наушники')])[1]")
     WebElement firstEarPhone;
 
-    public EarPhonePage() {
+    public EarmuffPage() {
         PageFactory.initElements(BaseSteps.getDriver(), this);
     }
 

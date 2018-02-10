@@ -9,10 +9,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import steps.BaseSteps;
 
-/**
- * Created by K_PC-S on 29.01.2018.
- */
-public class YandexMarketBasePage {
+
+public class MarketPage {
 
     Actions actions;
 
@@ -22,7 +20,7 @@ public class YandexMarketBasePage {
     @FindBy(xpath = "//div[@class = \"topmenu__subwrap\"]")
     WebElement topMenuSubWrap;
 
-    public YandexMarketBasePage() {
+    public MarketPage() {
         PageFactory.initElements(BaseSteps.getDriver(), this);
         actions = new Actions(BaseSteps.getDriver());
     }
