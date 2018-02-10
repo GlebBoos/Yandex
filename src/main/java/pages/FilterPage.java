@@ -18,7 +18,6 @@ public class FilterPage {
     @FindBy(xpath = "//div[contains(@class,'n-filter-panel-extend')]")
     WebElement buttonText;
 
-
     public FilterPage(){
         PageFactory.initElements(BaseStep.getDriver(),this);
     }

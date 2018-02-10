@@ -3,7 +3,6 @@ package steps;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-
 public class CucumberStep {
     MainPageStep mainPageStep = new MainPageStep();
     MarketPageStep marketPageStep = new MarketPageStep();
@@ -15,7 +14,7 @@ public class CucumberStep {
     //Блок 1: Общие функции для двух сценариев
     @When("^Выбор вкладки \"(.+)\"$")
     public void clickHomeTabs(String tabsName) {
-        mainPageStep.clickToTab(tabsName);
+        mainPageStep.clickToPage(tabsName);
     }
     @When("^Выбираем раздел \"(.+)\"$")
     public void moveCursorToTopMenu(String topMenuName) throws InterruptedException { marketPageStep.moveCursorToTopMenu(topMenuName); }

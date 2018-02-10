@@ -8,7 +8,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import steps.BaseStep;
 
-
 public class MainPage {
     @FindBy(xpath = "//div[contains(@class,\"home-tabs stream-control\")]")
     WebElement yandexMarketHref;

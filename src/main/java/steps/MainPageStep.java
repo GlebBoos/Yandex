@@ -6,7 +6,7 @@ import pages.MainPage;
 
 public class MainPageStep {
     @Step("Выбор вкладки {0}")
-    public void clickToTab(String tabName) {
+    public void clickToPage(String tabName) {
         new MainPage().clickPage(tabName);
     }
 }

@@ -41,5 +41,4 @@ public class BaseStep {
     public static byte[] takeScreenshot() {
         return ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.BYTES);
     }
-
 }

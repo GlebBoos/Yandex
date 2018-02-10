@@ -2,16 +2,12 @@
 
 package pages;
 
-
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import steps.BaseStep;
-
 import java.util.List;
-
 import static org.junit.Assert.assertEquals;
-
 
 public class EarmuffPage {
 
@@ -25,7 +21,6 @@ public class EarmuffPage {
     WebElement productName;
     @FindBy(xpath = "(//a/strong[contains(text(),'Наушники')])[1]")
     WebElement EarPhone;
-
 
     public EarmuffPage() {
         PageFactory.initElements(BaseStep.getDriver(), this);
