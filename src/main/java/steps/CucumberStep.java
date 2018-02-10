@@ -11,104 +11,79 @@ public class CucumberStep {
     FilterPageStep filterPageStep = new FilterPageStep();
     EarmuffPageStep earmuffPageStep = new EarmuffPageStep();
 
-    @When("^нажимаем на таб \"(.+)\"$")
+
+    //Блок 1: Общие функции для двух сценариев
+    @When("^Выбор вкладки \"(.+)\"$")
     public void clickHomeTabs(String tabsName) {
         mainPageStep.clickToTab(tabsName);
     }
-
-    @When("^наводим курсор на меню \"(.+)\"$")
-    public void moveCursorToTopMenu(String topMenuName) throws InterruptedException {
-        marketPageStep.moveCursorToTopMenu(topMenuName);
-    }
-
-    @When("^переходим на категорию \"(.+)\"$")
+    @When("^Выбираем раздел \"(.+)\"$")
+    public void moveCursorToTopMenu(String topMenuName) throws InterruptedException { marketPageStep.moveCursorToTopMenu(topMenuName); }
+    @When("^Выбор категории \"(.+)\"$")
     public void clickCategory(String subWrapName) {
         marketPageStep.clickToCategory(subWrapName);
     }
-
-    @Then("^нажимаем на фильтр \"(.+)\"$")
+    @Then("^Выбор фильтра \"(.+)\"$")
     public void clickFilter(String name) {
         tvPageStep.clickFilter(name);
     }
-
-    @When("^ожидаем элемент \"(.+)\"$")
+    @When("^Ожидание \"(.+)\"$")
     public void waitSubWrapMenuElement(String subWrapName) {
         marketPageStep.waitSubWrapMenuElement(subWrapName);
     }
-
-    @When("^заполняем поле \"(.+)\" значением \"(.+)\"$")
+    @When("^В поле \"(.+)\" установлено значение \"(.+)\"$")
     public void inputBoxFill(String name, String value) {
         filterPageStep.inputBoxFill(name, value);
     }
-
-    @When("^выбираем параметры фильтра \"(.+)\"$")
-    public void choiceCheckBox(String checkBoxName) throws InterruptedException {
-        filterPageStep.choiceCheckBox(checkBoxName);
-        //Thread.sleep(3000);
-    }
-
-    @Then("^нажимаем на кнопку \"(.+)\"$")
+    @When("^Установка параметров фильтра \"(.+)\"$")
+    public void choiceCheckBox(String checkBoxName) throws InterruptedException { filterPageStep.choiceCheckBox(checkBoxName); }
+    @Then("^Нажатие кнопки \"(.+)\"$")
     public void clickButtonText(String nameButton) {
         filterPageStep.clickButtonText(nameButton);
     }
 
-    @When("^сравниваем количество товаров на странице, ожидаем \"(.+)$")
+
+    //Блок 2: Функции для сценария с телевизором
+    @When("^Сравнение кол-во товаров для телевизора \"(.+)$")
     public void checkCountProductOnPage(int count) {
         tvPageStep.checkCountProductOnPage(count);
     }
-
-    @Then("^вытаскиваем название телевизора под номером \"(.+)\" из списка$")
+    @Then("^Название телевизора по номеру \"(.+)\" из списка$")
     public void getNameTV(int index) {
         tvPageStep.getNameTv(index);
     }
-
-    @Then("^вытаскиваем название наушников под номером \"(.+)\" из списка$")
-    public void getNameEarPhone(int index) {
-        earmuffPageStep.getNameEarPhone(index);
-    }
-
-    @When("^ищем отдельно по названию телевизора$")
-    public void setInputSearch() throws InterruptedException {
-        tvPageStep.sendKeyInputSearch();
-    }
-
-    @Then("^нажимаем поиск для телика$")
+    @When("^Поиск по названию телевизора$")
+    public void setInputSearch() throws InterruptedException { tvPageStep.sendKeyInputSearch(); }
+    @Then("^Поиск телевизора$")
     public void clickSearchButton() {
         tvPageStep.clickSearchButton();
     }
-
-    @Then("^проверяем на совпадение названия телевизора")
+    @Then("^Проверка телевизора на совпадение")
     public void checkProduct() {
         tvPageStep.checkProductTitle();
     }
 
-    //Для наушников остальное
-    @When("^избавляемся от геолокации нажатием на \"(.+)\"$")
-    public void clickOutOfGeo(String name){
-        marketPageStep.clickOutOfGeo(name);
-    }
 
-    @When("^сравниваем количество товаров для наушников на странице, ожидаем \"(.+)$")
+    //Блок 3: Функция для сценария с наушниками
+    @When("^Сравнение кол-ва товаров для наушников \"(.+)$")
     public void checkCountProductOnPageEarPhone(int count) {
         earmuffPageStep.checkCountProductOnPage(count);
     }
-
-    @Then("^ищем отдельно по названию наушников")
-    public void setInputSearchEarPhone() throws InterruptedException {
-        earmuffPageStep.sendKeyInputSearch();
+    @Then("^Поиск по названию наушников")
+    public void setInputSearchEarPhone() throws InterruptedException { earmuffPageStep.sendKeyInputSearch(); }
+    @Then("^Название наушников по номеру \"(.+)\" из списка$")
+    public void getNameEarPhone(int index) {
+        earmuffPageStep.getNameEarPhone(index);
     }
-
-    @When("^нажимаем поиск для наушников")
+    @When("^Поиск для наушников")
     public void clickSearchButtonEarPhone() {
         earmuffPageStep.clickSearchButton();
     }
-
-    @Then("^проверяем на совпадение названия наушников")
+    @Then("^Проверка наушников на совпадение")
     public void checkProductEarPhone() {
         earmuffPageStep.checkProductTitle();
     }
-
-    @When("^переходим на первые наушники по списку$")
+    @When("^Выбираем наушники из списка$")
     public  void clickFirstEarPhone(){
         earmuffPageStep.clickFirstEarPhone();
     }

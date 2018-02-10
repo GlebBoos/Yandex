@@ -13,7 +13,7 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 
-public class BaseSteps {
+public class BaseStep {
     private static WebDriver driver;
     private static String baseUrl;
     public static Properties properties = TestProperties.getInstance().getProperties();

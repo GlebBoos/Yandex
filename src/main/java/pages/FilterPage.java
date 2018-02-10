@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import steps.BaseSteps;
+import steps.BaseStep;
 
 
 public class FilterPage {
@@ -21,7 +21,7 @@ public class FilterPage {
     WebElement buttonText;
 
     public FilterPage(){
-        PageFactory.initElements(BaseSteps.getDriver(),this);
+        PageFactory.initElements(BaseStep.getDriver(),this);
     }
 
     public void choiceCheckBox(String checkBoxName){

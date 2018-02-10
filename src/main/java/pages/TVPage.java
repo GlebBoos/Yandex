@@ -6,7 +6,7 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import steps.BaseSteps;
+import steps.BaseStep;
 
 import java.util.List;
 
@@ -31,7 +31,7 @@ public class TVPage {
     WebElement productName;
 
     public TVPage() {
-        PageFactory.initElements(BaseSteps.getDriver(), this);
+        PageFactory.initElements(BaseStep.getDriver(), this);
     }
 
     public void clickAdvencedFilter(String name) {

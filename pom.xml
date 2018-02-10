@@ -67,7 +67,7 @@
                 <version>2.19.1</version>
                 <configuration>
                     <includes>
-                        <include>**/CucumberRunner.java</include>
+                        <include>**/YandexRun.java</include>
                     </includes>
                     <testFailureIgnore>true</testFailureIgnore>
                     <argLine>

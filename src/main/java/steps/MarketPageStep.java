@@ -21,8 +21,5 @@ public class MarketPageStep {
         new MarketPage().waitSubWrapMenuElement(subWrapMenuName);
     }
 
-    @Step("Кликаем чтобы избавится от геолокации")
-    public void clickOutOfGeo(String name){
-        new MarketPage().clickoutGeo(name);
-    }
+
 }

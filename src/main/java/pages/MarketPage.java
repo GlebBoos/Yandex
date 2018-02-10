@@ -1,6 +1,5 @@
 //Страница Yandex-маркета
 
-
 package pages;
 
 import org.openqa.selenium.By;
@@ -10,7 +9,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import steps.BaseSteps;
+import steps.BaseStep;
 
 
 public class MarketPage {
@@ -24,8 +23,8 @@ public class MarketPage {
     WebElement topMenuSubWrap;
 
     public MarketPage() {
-        PageFactory.initElements(BaseSteps.getDriver(), this);
-        actions = new Actions(BaseSteps.getDriver());
+        PageFactory.initElements(BaseStep.getDriver(), this);
+        actions = new Actions(BaseStep.getDriver());
     }
 
     public void moveCursorToTopMenuList(String topMenuName) throws InterruptedException {
@@ -40,15 +39,8 @@ public class MarketPage {
     }
 
     public void waitSubWrapMenuElement(String subWrapName) {
-        WebDriverWait wait = new WebDriverWait(BaseSteps.getDriver(), 10);
+        WebDriverWait wait = new WebDriverWait(BaseStep.getDriver(), 10);
         wait.until(ExpectedConditions.visibilityOf
                 (topMenuSubWrap.findElement(By.xpath("//a[text()='" + subWrapName + "']"))));
     }
-
-    public void clickoutGeo(String topMenuName){
-        topMenuList.findElement(By.xpath("//a[text()='" + topMenuName + "']")).click();
-    }
-
-
-
 }
