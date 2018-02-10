@@ -7,13 +7,13 @@ import ru.yandex.qatools.allure.annotations.Step;
 public class TVPageStep {
     String expectedName;
 
-    @Step("Нажимаем на расширенный фильтр")
+    @Step("Выбор фильтра")
     public void clickFilter(String name)
     {
-        new TVPage().clickAdvencedFilter(name);
+        new TVPage().AdvencedFilter(name);
     }
 
-    @Step("Сравниваем на количество товаров на странице. Ожидаем {0}")
+    @Step("Сравнение кол-во товаров для телевизора {0}")
     public void checkCountProductOnPage(int count)
     {
         new TVPage().checkCountProductOnPage(count);
@@ -21,25 +21,25 @@ public class TVPageStep {
 
 
 
-    @Step("Вытаскаваем название из списка под номером {0}(отсчет с 0)")
+    @Step("Название телевизора по номеру {0}")
     public String getNameTv(int index)
     {
         return expectedName = new TVPage().getElement(index);
     }
 
-    @Step("Вводим значение в поиск")
+    @Step("Поиск по названию телевизора")
     public void sendKeyInputSearch() throws InterruptedException
     {
         new TVPage().sendKeysExpectedName(expectedName);
     }
 
-    @Step("Нажимаем поиск")
+    @Step("Поиск телевизора")
     public void clickSearchButton()
     {
-        new TVPage().clickSearchButton();
+        new TVPage().SearchButton();
     }
 
-    @Step("Проверяем на совпадаение товара")
+    @Step("Проверка телевизора на совпадение")
     public void checkProductTitle()
     {
         new TVPage().checkProductName(expectedName);

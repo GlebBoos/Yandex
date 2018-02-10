@@ -18,7 +18,6 @@ public class MarketPage {
 
     @FindBy(xpath = "//ul[@class=\"topmenu__list\"]")
     WebElement topMenuList;
-
     @FindBy(xpath = "//div[@class = \"topmenu__subwrap\"]")
     WebElement topMenuSubWrap;
 
@@ -34,9 +33,7 @@ public class MarketPage {
         Thread.sleep(500);
     }
 
-    public void clickTopMenuSubWrap(String subWrapName) {
-        topMenuSubWrap.findElement(By.xpath("//a[contains(text(),'" + subWrapName + "')]")).click();
-    }
+    public void clickTopMenuSubWrap(String subWrapName) { topMenuSubWrap.findElement(By.xpath("//a[contains(text(),'" + subWrapName + "')]")).click(); }
 
     public void waitSubWrapMenuElement(String subWrapName) {
         WebDriverWait wait = new WebDriverWait(BaseStep.getDriver(), 10);

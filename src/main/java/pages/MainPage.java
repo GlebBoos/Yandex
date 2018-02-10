@@ -10,7 +10,6 @@ import steps.BaseStep;
 
 
 public class MainPage {
-
     @FindBy(xpath = "//div[contains(@class,\"home-tabs stream-control\")]")
     WebElement yandexMarketHref;
 
@@ -18,7 +17,7 @@ public class MainPage {
         PageFactory.initElements(BaseStep.getDriver(), this);
     }
 
-    public void clickHomeTab(String tabsName) {
+    public void clickPage(String tabsName) {
         yandexMarketHref.findElement(By.xpath("//a[contains(text(),'" + tabsName + "')]")).click();
 
     }

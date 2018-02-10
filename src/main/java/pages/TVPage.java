@@ -17,16 +17,12 @@ public class TVPage {
 
     @FindBy(xpath = "//div[@class='n-filter-panel-aside__show-more']")
     WebElement advancedFilter;
-
     @FindBy(xpath = "(//div[contains(@class,'n-snippet-card2__title')]/a)")
     List<WebElement> countTvOnPage; //
-
     @FindBy(xpath = "//div//input[@id='header-search']")
     WebElement searchInput;
-
     @FindBy(xpath = "//span[@class='search2__button']")
     WebElement searchButton;
-
     @FindBy(xpath = "//div[@class='n-title__text']//h1")
     WebElement productName;
 
@@ -34,34 +30,27 @@ public class TVPage {
         PageFactory.initElements(BaseStep.getDriver(), this);
     }
 
-    public void clickAdvencedFilter(String name) {
-        advancedFilter.click();
-    }
-
-    public int getCountProductOnPage() {
-        return countTvOnPage.size();
-    }
-
-    public void checkCountProductOnPage(int expectedValue) {
-        assertEquals(expectedValue, getCountProductOnPage());
-    }
-
     public String getElement(int index) {
         return countTvOnPage.get(index).getText();
     }
-
-    public void sendKeysExpectedName(String expName) {
-        searchInput.sendKeys(expName);
-    }
-
-    public void clickSearchButton() {
-        searchButton.click();
-    }
-
     public String getProductName() {
         return productName.getText();
     }
-
+    public int getCountProductOnPage() {
+        return countTvOnPage.size();
+    }
+    public void AdvencedFilter(String name) {
+        advancedFilter.click();
+    }
+    public void checkCountProductOnPage(int expectedValue) {
+        assertEquals(expectedValue, getCountProductOnPage());
+    }
+    public void sendKeysExpectedName(String expName) {
+        searchInput.sendKeys(expName);
+    }
+    public void SearchButton() {
+        searchButton.click();
+    }
     public void checkProductName(String expectedProductName) {
         assertEquals(expectedProductName, getProductName());
     }

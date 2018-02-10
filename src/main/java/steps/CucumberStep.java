@@ -36,7 +36,7 @@ public class CucumberStep {
         filterPageStep.inputBoxFill(name, value);
     }
     @When("^Установка параметров фильтра \"(.+)\"$")
-    public void choiceCheckBox(String checkBoxName) throws InterruptedException { filterPageStep.choiceCheckBox(checkBoxName); }
+    public void choiceCheckBox(String checkBoxName)  { filterPageStep.choiceCheckBox(checkBoxName); }
     @Then("^Нажатие кнопки \"(.+)\"$")
     public void clickButtonText(String nameButton) {
         filterPageStep.clickButtonText(nameButton);

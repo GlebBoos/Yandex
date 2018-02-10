@@ -17,52 +17,42 @@ public class EarmuffPage {
 
     @FindBy(xpath = "(//div[contains(@class,'n-snippet-cell2__title')]/a)")
     List<WebElement> countOnPage;
-
     @FindBy(xpath = "//div//input[@id='header-search']")
     WebElement searchInput;
-
     @FindBy(xpath = "//span[@class='search2__button']")
     WebElement searchButton;
-
     @FindBy(xpath = "//div[@class='n-title__text']//h1")
     WebElement productName;
-
     @FindBy(xpath = "(//a/strong[contains(text(),'Наушники')])[1]")
-    WebElement firstEarPhone;
+    WebElement EarPhone;
+
 
     public EarmuffPage() {
         PageFactory.initElements(BaseStep.getDriver(), this);
     }
 
-    public int getCountProductOnPage() {
-        return countOnPage.size();
-    }
-
-    public void checkCountProductOnPage(int expectedValue) {
-        assertEquals(expectedValue, getCountProductOnPage());
-    }
-
     public String getElement(int index) {
         return countOnPage.get(index).getText();
     }
-
-    public void sendKeysExpectedName(String expName) {
-        searchInput.sendKeys(expName);
-    }
-
-    public void clickSearchButton() {
-        searchButton.click();
-    }
-
     public String getProductName() {
         return productName.getText();
     }
-
+    public int getCountProductOnPage() {
+        return countOnPage.size();
+    }
+    public void checkCountOnPage(int expectedValue) {
+        assertEquals(expectedValue, getCountProductOnPage());
+    }
+    public void sendExpectedName(String expName) {
+        searchInput.sendKeys(expName);
+    }
+    public void SearchButton() {
+        searchButton.click();
+    }
     public void checkProductName(String expectedProductName) {
         assertEquals(expectedProductName, getProductName());
     }
-
-    public void clickFirstEarPhone(){
-        firstEarPhone.click();
+    public void EarPhoneClick(){
+        EarPhone.click();
     }
 }

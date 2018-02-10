@@ -13,21 +13,18 @@ public class FilterPage {
 
     @FindBy (xpath = "//div[contains(@class,'n-filter-block__item')]")
     WebElement title;
-
     @FindBy(xpath = "//span[@class='input__box']")
     WebElement inputBox;
-
     @FindBy(xpath = "//div[contains(@class,'n-filter-panel-extend')]")
     WebElement buttonText;
+
 
     public FilterPage(){
         PageFactory.initElements(BaseStep.getDriver(),this);
     }
 
-    public void choiceCheckBox(String checkBoxName){
-        title.findElement(By.xpath("//label[text()='" + checkBoxName + "']")).click();
-    }
-
+    public void choiceCheckBox(String checkBoxName){ title.findElement(By.xpath("//label[text()='" + checkBoxName + "']")).click(); }
+    public void clickButtonText(String nameButton){ buttonText.findElement(By.xpath("//a[contains(@class,'button button_size_l')]")).click(); }
     public void inputBoxFill(String name, String value){
         switch (name){
             case("Цена от"):
@@ -41,9 +38,6 @@ public class FilterPage {
         }
     }
 
-    public void clickButtonText(String nameButton){
-        buttonText.findElement(By.xpath("//a[contains(@class,'button button_size_l')]")).click();
-    }
 
 
 }
