@@ -1,3 +1,5 @@
+//Основная страница Yandex
+
 package pages;
 
 import org.openqa.selenium.By;
